@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ 
+}
+
+:root{
+    --text-color:rgb(252, 242, 242);
+    --botao-color: black;
+    --bg-url: url(Imgs/bg-desktop.jpg); 
+    --stro-color: rgba(255,255,255,0.5);
+    --surface-color:rgba(255,255,255,0.1);
+    --fundo-bg-color: url(Imgs/moon.svg); 
+    
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(Imgs/bg-desktop-light.jpg); 
+    --stro-color: rgba(0,0,0,0.5);
+    --surface-color:rgba(0,0,0,0.1);
+    --fundo-bg-color: url(Imgs/sun.svg); 
+}
+
+
+
+body{
+   background: var(--bg-url) no-repeat top center/cover;
+   margin-top: 10vh;
+   height: 90vh;
+   
+}
+
+
+#container {
+    
+    width: 360px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+p {
+    color: var(--text-color);
+}
+
+
+
+/*Foto*/
+#MinhaFto img {
+   width: 112px;
+   margin: 10px ;
+   border-radius: 50vh;
+   border: 1px solid var(--stro-color);
+   
+}
+
+#MinhaFto{
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+}
+
+
+
+
+/*Botão Dark/light*/
+#botao {
+    position: relative;
+    width: 68px;
+    margin: 3vh auto;
+    cursor: pointer;
+}
+
+#botao button {
+    width: 32px;
+    height: 32px;
+    background: white var(--fundo-bg-color) no-repeat center;
+    border: 0;
+    border-radius: 50%;  
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform:translateY(-50%);
+    animation: slide-out 0.2s forwards;
+    cursor: pointer;
+}
+
+#botao span {
+    display:block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stro-color);
+    backdrop-filter:  blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+.light #botao button{
+    animation: slide-in 0.2s forwards;
+}
+
+
+
+/*Links*/
+#links {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+#links a {
+    border: 1px solid var(--stro-color);
+    background: var(--surface-color);
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 0px 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+  
+}
+
+#links  :hover{
+    background: rgba(255,255,255,0.2);
+    margin-left: 50px;
+
+}
+
+
+
+
+/*Animação*/
+@keyframes slide-in {
+    
+    from{
+        left: 0;
+    }
+
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes slide-out {
+    
+    from{
+        left: 50%;
+    }
+
+    to{
+        left: 0%;
+    }
+}
